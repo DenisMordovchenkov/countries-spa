@@ -19,14 +19,14 @@ const Wrapper = styled.div`
 const Title = styled.a.attrs({
     href: '/'
 })`
-  color: var(--colors-text);
+  color: var(--color-text);
   font-size: var(--fs-sm);
   text-decoration: none;
   font-weight: var(--fw-bold);
 `
 
 const ThemeSwitcher = styled.div`
-  color: var(--colors-text);
+  color: var(--color-text);
   font-size: var(--fs-sm);
   cursor: pointer;
   //font-weight: var(--fw-bold);
@@ -49,9 +49,9 @@ const Header = () => {
                 <Wrapper>
                     <Title>The World is Yours!</Title>
                     <ThemeSwitcher onClick={toggleTheme}>
-                        {theme === 'light' ? (
-                            <IoMoonOutline size='14px'/>
-                        ) : (<IoMoonSharp size='14px'/>)}
+                        {theme === 'light'
+                            ? (<IoMoonOutline size='14px'/>)
+                            : (<IoMoonSharp size='14px'/>)}
 
                         <span style={{marginLeft: '0.75rem'}}>{theme} Theme</span>
                     </ThemeSwitcher>
