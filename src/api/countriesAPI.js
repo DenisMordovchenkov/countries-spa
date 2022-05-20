@@ -1,8 +1,8 @@
 import * as axios from 'axios'
-import { ALL_COUNTRIES, BASE_URL } from './configAxios'
+import { ALL_COUNTRIES, BASE_URL, searchByCountry } from './configAxios'
 
 const query = axios.create({
-    baseURL: BASE_URL
+    baseURL: BASE_URL,
 })
 
 
@@ -11,5 +11,10 @@ export const countriesAPI = {
         return query
             .get(ALL_COUNTRIES)
             .then(({data}) => setCountries(data))
-    }
+    },
+    searchByCountry(title, setCountry) {
+        return query
+            .get(searchByCountry(title))
+            .then(({data}) => setCountry(data[0]))
+    },
 }
