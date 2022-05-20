@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# Greetings!
+## The project is implemented using the API provided by the site https://restcountries.com.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>I borrowed the idea from the website https://frontendmentor.io.</p>
+<p>This is a SPA written in React without a state manager. I managed with hooks.</p>
 
-## Available Scripts
+<p>I also used the following libraries:</p>
+<li>Styled-components acts as a style library.</li>
+<li>axios to get data from the API</li>
+<li>react-icons to display icons</li>
+<li>react-select to implement a custom selector list</li>
+<li>react-router-dom for routing.</li>
 
-In the project directory, you can run:
+<p>In the demo, Hash Router is used instead of Browser Router due to the peculiarities of the githubpages page output.</p>
 
-### `yarn start`
+<p>What happened in the end?</p>  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+__All countries of the world are displayed (available in the API ;-)).__  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `yarn test`
+__There is a filter by region, and a search by country name is also available.__  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+__When you click on a certain country, a page opens with a description of the main characteristics and a list of neighboring countries that you can go to by clicking on the country__
