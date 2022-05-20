@@ -22,3 +22,5 @@ __There is a filter by region, and a search by country name is also available.__
 
 
 __When you click on a certain country, a page opens with a description of the main characteristics and a list of neighboring countries that you can go to by clicking on the country__
+
+You can try app here https://denismordovchenkov.github.io/countries_spa-demo
