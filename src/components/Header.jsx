@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import {useState, useEffect} from 'react'
-import {Container} from './Container'
-import { IoMoonOutline, IoMoonSharp} from 'react-icons/io5'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { Container } from './Container'
+import { IoMoonOutline, IoMoonSharp } from 'react-icons/io5'
 
 const HeaderEl = styled.header`
-    box-shadow: var(--shadow);
-    background-color: (--color-ui-base);
+  box-shadow: var(--shadow);
+  background-color: (--color-ui-base);
 `
 
 const Wrapper = styled.div`
@@ -16,8 +17,8 @@ const Wrapper = styled.div`
   padding: 2rem 0;
 `
 
-const Title = styled.a.attrs({
-    href: '/'
+const Title = styled(Link).attrs({
+    to: '/',
 })`
   color: var(--color-text);
   font-size: var(--fs-sm);
@@ -34,11 +35,10 @@ const ThemeSwitcher = styled.div`
 `
 
 
-
 const Header = () => {
     const [theme, setTheme] = useState('light')
 
-    const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light' )
+    const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light')
 
     useEffect(() => {
         document.body.setAttribute('data-theme', theme)
@@ -48,12 +48,12 @@ const Header = () => {
             <Container>
                 <Wrapper>
                     <Title>The World is Yours!</Title>
-                    <ThemeSwitcher onClick={toggleTheme}>
-                        {theme === 'light'
-                            ? (<IoMoonOutline size='14px'/>)
-                            : (<IoMoonSharp size='14px'/>)}
+                    <ThemeSwitcher onClick={ toggleTheme }>
+                        { theme === 'light'
+                            ? (<IoMoonOutline size="14px"/>)
+                            : (<IoMoonSharp size="14px"/>) }
 
-                        <span style={{marginLeft: '0.75rem'}}>{theme} Theme</span>
+                        <span style={ {marginLeft: '0.75rem'} }>{ theme } Theme</span>
                     </ThemeSwitcher>
                 </Wrapper>
             </Container>
