@@ -9,7 +9,7 @@ const Wrapper = styled.section`
   grid-template-columns: 100%;
   gap: 2rem;
 
-  @media (min-width: 767px) {
+  @media (max-width: 767px) {
     grid-template-columns: minmax(100px, 400px) 1fr;
     align-items: center;
     gap: 5rem;
@@ -68,7 +68,7 @@ const Meta = styled.div`
     font-weight: var(--fw-bold);
   }
 
-  @media (min-width: 767px) {
+  @media (max-width: 767px) {
     flex-direction: row;
     align-items: center;
   }
