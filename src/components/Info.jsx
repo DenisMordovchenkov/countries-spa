@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { useEffect, useState } from 'react'
+import { countriesAPI } from '../api/countriesAPI'
 
 const Wrapper = styled.section`
   margin-top: 3rem;
@@ -59,14 +61,14 @@ const Meta = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
+
   gap: 1.5rem;
-  
-  & > b{
+
+  & > b {
     font-weight: var(--fw-bold);
   }
-  
-  @media(min-width: 767px) {
+
+  @media (min-width: 767px) {
     flex-direction: row;
     align-items: center;
   }
@@ -75,7 +77,7 @@ const Meta = styled.div`
 const TagGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
-  
+
   gap: 1rem;
 `
 
@@ -98,8 +100,17 @@ const Info = (props) => {
         subregion, topLevelDomain, currencies = [],
         languages = [],
         borders = [],
-        link,
+        navigate,
     } = props
+
+    const [neighbours, setNeighbours] = useState([])
+
+    useEffect(() => {
+        if (borders.length) {
+            countriesAPI.filterByCode(borders, setNeighbours)
+        }
+    }, [borders])
+
     return (
         <Wrapper>
             <InfoImage src={ flag } alt={ title }/>
@@ -122,9 +133,6 @@ const Info = (props) => {
                         <InfoListItem>
                             <b>Capital:</b> { capital }
                         </InfoListItem>
-                        <InfoListItem>
-                            <b>Native Name:</b> { nativeName }
-                        </InfoListItem>
                     </InfoList>
                     <InfoList>
                         <InfoListItem>
@@ -143,13 +151,14 @@ const Info = (props) => {
                 </InfoListGroup>
                 <Meta>
                     <b>Border Countries</b>
-                    {!borders.length ? (
+                    { !borders.length ? (
                         <span>There is no border countries</span>
                     ) : (
                         <TagGroup>
-                            {borders.map(b => (<Tag key={b} >{b}</Tag>))}
+                            { neighbours.map(n => (<Tag key={ n }
+                                                        onClick={ () => navigate(`/country/${ n }`) }>{ n }</Tag>)) }
                         </TagGroup>
-                    )}
+                    ) }
                 </Meta>
             </div>
         </Wrapper>

@@ -13,11 +13,11 @@ const HomePage = ({countries, setCountries}) => {
 
     const handleSearch = (search, region) => {
         let data = [...countries]
-        if(region) {
+        if (region) {
             data = data.filter(c => c.region.includes(region))
         }
 
-        if(search) {
+        if (search) {
             data = data.filter(c => c.name.toLowerCase().includes(search.toLowerCase()))
         }
 
@@ -25,13 +25,18 @@ const HomePage = ({countries, setCountries}) => {
     }
 
     useEffect(() => {
-        if(!countries.length) {
+        if (!countries.length) {
             countriesAPI.getAllCountries(setCountries)
         }
+    }, [])
+
+    useEffect(() => {
+        handleSearch()
     }, [countries])
+
     return (
         <>
-            <Controls onSearch={handleSearch}/>
+            <Controls onSearch={ handleSearch }/>
             <CountrysList>
                 {
                     filteredCountries.map(c => {
@@ -54,7 +59,8 @@ const HomePage = ({countries, setCountries}) => {
                             ],
                         }
                         return (
-                            <CountryCard key={ c.name } onClick={() => navigate(`/country/${c.name}`)} { ...countryInfo }/>
+                            <CountryCard key={ c.name }
+                                         onClick={ () => navigate(`/country/${ c.name }`) } { ...countryInfo }/>
                         )
                     })
                 }
